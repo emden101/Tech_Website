@@ -5,6 +5,6 @@ Ada's Tech website
 #You can comment off the engine.js script to disable the SPA functionality.
 #Download all the files and organize the pictures into a folder called images;
 
-#the pages should also placed in a folder called Pages
+#the pages should also be placed in a folder called Pages
 
 Happy SKENTING!!!!
