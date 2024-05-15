@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tech Service - About Us</title>
+    <style>
+      /* Internal CSS styling */
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #020003;
+        color: white;
+        margin: 0;
+        padding: 0;
+      }
+
+      header {
+        background: #0c3ad1;
+        color: #fff;
+        padding: 20px 0;
+        text-align: center;
+      }
+
+      header h1 {
+        margin: 0;
+      }
+
+      nav ul {
+        list-style: none;
+        padding: 0;
+      }
+
+      nav ul li {
+        display: inline;
+        margin-right: 20px;
+      }
+
+      nav ul li a {
+        color: #fff;
+        text-decoration: none;
+      }
+
+      nav ul li a:hover {
+        text-decoration: underline;
+      }
+
+      .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+      }
+
+      #about-content {
+        width: 60%;
+      }
+
+      #about-slider {
+        width: 40%;
+        position: relative;
+      }
+
+      #about-slider img {
+        max-width: 100%;
+        height: auto;
+        display: none;
+      }
+
+      #about-slider img.active {
+        display: block;
+      }
+
+      .controls {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 10px;
+        z-index: 1;
+      }
+
+      .control-btn {
+        background: #333;
+        color: #fff;
+        border: none;
+        padding: 5px 10px;
+        cursor: pointer;
+        border-radius: 5px;
+        margin-bottom: 5px;
+      }
+
+      footer {
+        background: #333;
+        color: #fff;
+        text-align: center;
+        padding: 20px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Tech Service</h1>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <div class="container">
+      <div id="about-content">
+        <h2>About Us</h2>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam auctor
+          felis non sapien molestie, ac laoreet lectus ultricies.
+        </p>
+      </div>
+      <div id="about-slider">
+        <img class="active" src="/images/Tech02.jpg" alt="Image 1" />
+        <img src="/images/Tech01.jpg" alt="Image 2" />
+        <img src="/images/Tech04.jpg" alt="Image 3" />
+        <img src="/images/Tech03.jpg" alt="image 4" />
+        <div class="controls">
+          <button class="control-btn" onclick="prevSlide()">Previous</button>
+          <button class="control-btn" onclick="nextSlide()">Next</button>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <p>&copy; 2024 Tech Service. All rights reserved.</p>
+    </footer>
+
+    <script>
+      // JavaScript for image slider
+      let currentSlide = 0;
+      const slides = document.querySelectorAll("#about-slider img");
+
+      function showSlide() {
+        slides.forEach((slide) => slide.classList.remove("active"));
+        slides[currentSlide].classList.add("active");
+      }
+
+      function prevSlide() {
+        currentSlide--;
+        if (currentSlide < 0) {
+          currentSlide = slides.length - 1;
+        }
+        showSlide();
+      }
+
+      function nextSlide() {
+        currentSlide++;
+        if (currentSlide >= slides.length) {
+          currentSlide = 0;
+        }
+        showSlide();
+      }
+    </script>
+  </body>
+</html>
